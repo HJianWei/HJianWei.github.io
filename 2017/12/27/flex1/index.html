@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>flex | HJianWei Blog</title>
+  <title>常见归纳 | HJianWei Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="flex常见归纳">
 <meta name="keywords" content="css,flex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="flex">
+<meta property="og:title" content="常见归纳">
 <meta property="og:url" content="http://yoursite.com/2017/12/27/flex1/index.html">
 <meta property="og:site_name" content="HJianWei Blog">
 <meta property="og:description" content="flex常见归纳">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-27T05:51:46.081Z">
+<meta property="og:updated_time" content="2017-12-27T06:26:25.558Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flex">
+<meta name="twitter:title" content="常见归纳">
 <meta name="twitter:description" content="flex常见归纳">
   
     <link rel="alternative" href="/atom.xml" title="HJianWei Blog" type="application/atom+xml">
@@ -170,13 +170,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      flex
+      常见归纳
     </h1>
   
 
         
         <a href="/2017/12/27/flex1/" class="archive-article-date">
-  	<time datetime="2017-12-27T03:48:26.287Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
+  	<time datetime="2017-12-27T06:18:38.857Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
 </a>
         
       </header>
@@ -184,22 +184,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<pre><code>总是在样式中看见`flex:1`,又总是忘记，今天就直接归纳一下。
-</code></pre><hr>
-<pre><code>`flex`是`flex-grow`、`flex-shrink`、`flex-basis`的缩写。
-</code></pre><hr>
-<pre><code>`flex-grow`：默认值为0。一个数字，规定项目将相对于其他灵活的项目进行扩展的量。
-</code></pre><hr>
-<pre><code>`flex-shrink`:默认值为1。一个数字，规定项目将相对于其他灵活的项目进行收缩的量。
-</code></pre><hr>
-<pre><code>`flex-basis`:默认值为auto。用于设置或检索弹性盒伸缩基准值。
-</code></pre><hr>
-<pre><code>`flex` 的默认值是以上三个属性值的组合。假设以上三个属性同样取默认值，则 `flex` 的默认值是 0 1 auto。
-`flex` 取值为 none，则计算值为 0 0 auto。
-`flex` 取值为 auto，则计算值为 1 1 auto。
-`flex` 取值为一个非负数字，则该数字为 flex-grow 值，flex-shrink 取 1，flex-basis 取 0%。
-所以`flex：1`相当于： 
-</code></pre><blockquote>
+<p>总是在样式中看见<code>flex:1</code>,又总是忘记，今天就直接归纳一下。</p>
+<hr>
+<h2 id="flex-grow"><a href="#flex-grow" class="headerlink" title="####flex-grow  "></a>####flex-grow  </h2><p><code>flex-grow</code>：默认值为0。一个数字，规定项目将相对于其他灵活的项目进行扩展的量。</p>
+<hr>
+<p><code>flex-shrink</code>:默认值为1。一个数字，规定项目将相对于其他灵活的项目进行收缩的量。</p>
+<hr>
+<p><code>flex-basis</code>:默认值为auto。用于设置或检索弹性盒伸缩基准值。</p>
+<hr>
+<p><code>flex</code> 的默认值是以上三个属性值的组合。假设以上三个属性同样取默认值，则 <code>flex</code> 的默认值是 0 1 auto。<br>    <code>flex</code> 取值为 none，则计算值为 0 0 auto。<br>    <code>flex</code> 取值为 auto，则计算值为 1 1 auto。<br>    <code>flex</code> 取值为一个非负数字，则该数字为 flex-grow 值，flex-shrink 取 1，flex-basis 取 0%。<br>    所以<code>flex：1</code>相当于： </p>
+<blockquote>
 <pre><code>flex-grow: 1;
 flex-shrink: 1;
 flex-basis: 0%;
