@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>catagories | HJianWei Blog</title>
+  <title>常见浏览器兼容 | HJianWei Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="catagories">
-<meta property="og:url" content="http://yoursite.com/catagories/index.html">
+  <meta name="description" content="css3常见浏览器兼容">
+<meta name="keywords" content="css,兼容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见浏览器兼容">
+<meta property="og:url" content="http://yoursite.com/2018/01/02/css3_compatibility/index.html">
 <meta property="og:site_name" content="HJianWei Blog">
+<meta property="og:description" content="css3常见浏览器兼容">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-22T09:24:01.092Z">
+<meta property="og:updated_time" content="2018-01-03T01:15:21.064Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="catagories">
+<meta name="twitter:title" content="常见浏览器兼容">
+<meta name="twitter:description" content="css3常见浏览器兼容">
   
     <link rel="alternative" href="/atom.xml" title="HJianWei Blog" type="application/atom+xml">
   
@@ -159,27 +163,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-css3_compatibility" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      catagories
+      常见浏览器兼容
     </h1>
   
 
         
-        <a href="/catagories/index.html" class="archive-article-date">
-  	<time datetime="2017-12-22T09:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-22</time>
+        <a href="/2018/01/02/css3_compatibility/" class="archive-article-date">
+  	<time datetime="2018-01-02T06:14:22.519Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <hr>
+<p>整理的一些的浏览器兼容问题</p>
+<hr>
+<h4 id="不同浏览器一些标签默认的margin-padding不同"><a href="#不同浏览器一些标签默认的margin-padding不同" class="headerlink" title="不同浏览器一些标签默认的margin,padding不同"></a>不同浏览器一些标签默认的margin,padding不同</h4><p>在不加样式控制的情况下，一些标签默认的margin 和padding差异较大。如大部分浏览器body标签默认为<code>margin：8px</code><br><strong>解决方法：</strong> <code>*{margin:0;padding:0;}</code></p>
+<hr>
+<h4 id="IE6中使用float浮动元素导致margin产生双边距"><a href="#IE6中使用float浮动元素导致margin产生双边距" class="headerlink" title="IE6中使用float浮动元素导致margin产生双边距"></a>IE6中使用float浮动元素导致margin产生双边距</h4><p><code>#test{float:left;width:100px;height:100px;margin:5px;}</code><br>正常情况下，该元素上下右左的margin为5px，但在IE6中左margin为10px。在IE6中，当float浮动元素的浮动方向和margin边距的方向一致，会出现双边距现象。如上面的例子，元素向左浮动，而其中只有左边距才产生了双边距。并且，同一行中如果有多个浮动元素，只有第一个浮动元素会出现双边距bug，其它的浮动元素则不会。<br><strong>解决方法：</strong> <code>#test{float:left;width:100px;height:100px;margin:5px;display:inline;}</code></p>
+<hr>
+<h4 id="设置较小高度标签（一般小于10px），在IE6，IE7，遨游中高度超出自己设置高度"><a href="#设置较小高度标签（一般小于10px），在IE6，IE7，遨游中高度超出自己设置高度" class="headerlink" title="设置较小高度标签（一般小于10px），在IE6，IE7，遨游中高度超出自己设置高度"></a>设置较小高度标签（一般小于10px），在IE6，IE7，遨游中高度超出自己设置高度</h4><p><strong>解决方法：</strong> 给超出高度的标签设置overflow:hidden;或者设置行高line-height 小于你设置的高度。</p>
+<hr>
+<h4 id="行内属性标签，设置display-block后采用float布局，又有横行的margin的情况，IE6间距bug"><a href="#行内属性标签，设置display-block后采用float布局，又有横行的margin的情况，IE6间距bug" class="headerlink" title="行内属性标签，设置display:block后采用float布局，又有横行的margin的情况，IE6间距bug"></a>行内属性标签，设置display:block后采用float布局，又有横行的margin的情况，IE6间距bug</h4><p><strong>解决方法：</strong> 因为它本身就是行内属性标签，所以我们再加上display:inline的话，它的高宽就不可设了。这时候我们还需要在display:inline后面加入display:talbe。</p>
+<hr>
+<h4 id="图片默认有间距"><a href="#图片默认有间距" class="headerlink" title="图片默认有间距"></a>图片默认有间距</h4><p>因为img标签是行内属性标签，所以只要不超出容器宽度，img标签都会排在一行里，但是部分浏览器的img标签之间会有个间距。去掉这个间距使用float是正道。加了问题一中提到的通配符也不起作用。<br><strong>解决方法：</strong> 使用float属性为img布局</p>
+<hr>
+
       
 
       
@@ -187,7 +204,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">兼容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -237,7 +280,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/catagories/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/02/css3_compatibility/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -249,6 +292,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2018/01/03/css_hack/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          常见浏览器兼容
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/28/vpn/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vpn的使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -267,6 +329,16 @@
 </aside>
 
 
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -289,7 +361,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
