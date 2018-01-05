@@ -181,7 +181,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p>今天有一个sql需求，原始表比如下表</p>
+<p>今天有一个sql需求，原始表table_test比如下表</p>
 <table>
 <thead>
 <tr>
@@ -224,9 +224,9 @@
 </tbody>
 </table>
 <hr>
-<p>需要的查询结果为各个地区、水果、销量和以及根据日期得到最新的价格<br>NAME | AREA | sales| PRICE<br>—-|——|—-<br>苹果 | 厦门 | 9 | 0.5<br>苹果 | 莆田 | 4 | 0.6<br>梨 | 厦门 | 2 | 0.3 </p>
+<p>需要的查询结果为各个地区、水果、销量和以及根据日期得到最新的价格<br>NAME | AREA | sales| PRICE<br>—-|——|——|—-<br>苹果 | 厦门 | 9 | 0.5<br>苹果 | 莆田 | 4 | 0.6<br>梨 | 厦门 | 2 | 0.3 </p>
 <hr>
-<p>按name,area分组得到account的和以及最新的价格，主要分组后是按最新DATE得到对应的PRICE作为price，可以多表查询inner join来做<br>但是有一个更好的方法，就是利用oracle数据库的<code>||</code>和<code>substr()</code><br><code>select name, area, sum(sales),sub(max(date||price),9) as price from table group by name, area</code></p>
+<p>按name,area分组得到account的和以及最新的价格，主要分组后是按最新DATE得到对应的PRICE作为price，可以多表查询inner join来做<br>但是有一个更好的方法，就是利用oracle数据库的<code>||</code>和<code>substr()</code><br><code>select name, area, sum(sales),sub(max(date||price),9) as price from table_test group by name, area</code></p>
 
       
 
@@ -897,6 +897,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">flex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
               </li>
              
@@ -905,7 +909,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">flex</a>
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -914,14 +922,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
             
             <div class="clearfix"></div>
