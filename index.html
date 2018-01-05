@@ -187,7 +187,7 @@
 <tr>
 <th>NAME</th>
 <th>AREA</th>
-<th>sales</th>
+<th>SALES</th>
 <th>PRICE</th>
 <th>DATE</th>
 </tr>
@@ -224,7 +224,37 @@
 </tbody>
 </table>
 <hr>
-<p>需要的查询结果为各个地区、水果、销量和以及根据日期得到最新的价格<br>NAME | AREA | sales| PRICE<br>—-|——|——|—-<br>苹果 | 厦门 | 9 | 0.5<br>苹果 | 莆田 | 4 | 0.6<br>梨 | 厦门 | 2 | 0.3 </p>
+<p>需要的查询结果为各个地区、水果、销量和以及根据日期得到最新的价格</p>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>AREA</th>
+<th>SALES</th>
+<th>PRICE </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>苹果</td>
+<td>厦门</td>
+<td>9</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>苹果</td>
+<td>莆田</td>
+<td>4</td>
+<td>0.6 </td>
+</tr>
+<tr>
+<td>梨</td>
+<td>厦门</td>
+<td>2</td>
+<td>0.3 </td>
+</tr>
+</tbody>
+</table>
 <hr>
 <p>按name,area分组得到account的和以及最新的价格，主要分组后是按最新DATE得到对应的PRICE作为price，可以多表查询inner join来做<br>但是有一个更好的方法，就是利用oracle数据库的<code>||</code>和<code>substr()</code><br><code>select name, area, sum(sales),sub(max(date||price),9) as price from table_test group by name, area</code></p>
 
