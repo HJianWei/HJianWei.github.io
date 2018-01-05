@@ -256,7 +256,7 @@
 </tbody>
 </table>
 <hr>
-<p>按name,area分组得到account的和以及最新的价格，主要分组后是按最新DATE得到对应的PRICE作为price，可以多表查询inner join来做<br>但是有一个更好的方法，就是利用oracle数据库的<code>||</code>和<code>substr()</code><br><code>select name, area, sum(sales),sub(max(date||price),9) as price from table_test group by name, area</code></p>
+<p>按name,area分组得到account的和以及最新的价格，主要分组后是按最新DATE得到对应的PRICE作为price，可以多表查询inner join来做<br>但是有一个更好的方法，就是利用oracle数据库的<code>||</code>和<code>substr()</code><br><code>select name, area, sum(sales),substr(max(date||price),9) as price from table_test group by name, area</code></p>
 
       
 
@@ -935,15 +935,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">flex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">flex</a>
               </li>
              
               <li class="article-tag-list-item">
