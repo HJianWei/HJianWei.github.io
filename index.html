@@ -163,9 +163,71 @@
     <article id="post-sql1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/05/sql1/">oracle中根据最新的值显示分表查询</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/05/sql1/" class="archive-article-date">
+  	<time datetime="2018-01-05T01:21:28.768Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <hr>
+<p>今天有一个sql需求，原始表比如下表</p>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>AREA</th>
+<th>sales</th>
+<th>PRICE</th>
+<th>DATE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>苹果</td>
+<td>厦门</td>
+<td>3</td>
+<td>0.3</td>
+<td>20180103</td>
+</tr>
+<tr>
+<td>苹果</td>
+<td>莆田</td>
+<td>4</td>
+<td>0.6</td>
+<td>20180105</td>
+</tr>
+<tr>
+<td>梨</td>
+<td>厦门</td>
+<td>2</td>
+<td>0.3</td>
+<td>20180105</td>
+</tr>
+<tr>
+<td>苹果</td>
+<td>厦门</td>
+<td>6</td>
+<td>0.5</td>
+<td>20180105</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>需要的查询结果为各个地区、水果、销量和以及根据日期得到最新的价格<br>NAME | AREA | sales| PRICE<br>—-|——|—-<br>苹果 | 厦门 | 9 | 0.5<br>苹果 | 莆田 | 4 | 0.6<br>梨 | 厦门 | 2 | 0.3 </p>
+<hr>
+<p>按name,area分组得到account的和以及最新的价格，主要分组后是按最新DATE得到对应的PRICE作为price，可以多表查询inner join来做<br>但是有一个更好的方法，就是利用oracle数据库的<code>||</code>和<code>substr()</code><br><code>select name, area, sum(sales),sub(max(date||price),9) as price from table group by name, area</code></p>
+
       
 
       
@@ -173,7 +235,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -797,14 +885,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -817,6 +897,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flex</a>
               </li>
              
@@ -826,6 +914,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
             
             <div class="clearfix"></div>
